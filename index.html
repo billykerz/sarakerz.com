@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sara Kerz - Professional Actor | Theater, Film, and Television</title>
+    <meta name="description" content="Sara Kerz is a versatile actor based in Los Angeles, specializing in theater, film, and television performances. View showreel, photos, and booking information.">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">SARA KERZ</div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="photos.html">Photos</a></li>
+                <li><a href="videos.html">Videos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <header class="hero">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="/api/placeholder/video" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1>Sara Kerz</h1>
+            <p>Actor • Voice Artist • Performer</p>
+            <div class="hero-cta">
+                <a href="contact.html" class="cta-button">Book Now</a>
+                <a href="videos.html" class="cta-button secondary">Watch Showreel</a>
+            </div>
+            <div class="quick-links">
+                <a href="/resume.pdf">Download Resume</a>
+                <a href="videos.html#demo">View Demo Reel</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="stats">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <h3>10+</h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Productions</p>
+                </div>
+                <div class="stat-item">
+                    <h3>12</h3>
+                    <p>Awards</p>
+                </div>
+                <div class="stat-item">
+                    <h3>8</h3>
+                    <p>Special Skills</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured">
+            <h2>Latest Work</h2>
+            <div class="featured-grid">
+                <div class="featured-item" data-category="film">
+                    <img src="/api/placeholder/400/600" alt="Latest Project 1" loading="lazy">
+                    <h3>The Last Letter</h3>
+                    <p>Lead Role - Drama</p>
+                    <div class="project-details">
+                        <span class="award"><i class="fas fa-award"></i> Best Actress - LA Film Festival</span>
+                        <a href="#" class="view-more">View Project</a>
+                    </div>
+                </div>
+                <div class="featured-item" data-category="theater">
+                    <img src="/api/placeholder/400/600" alt="Latest Project 2" loading="lazy">
+                    <h3>Romeo & Juliet</h3>
+                    <p>Lead Role - Theater</p>
+                    <div class="project-details">
+                        <span class="venue">City Theater, Los Angeles</span>
+                        <a href="#" class="view-more">View Project</a>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="film">Film</button>
+                <button class="filter-btn" data-filter="theater">Theater</button>
+                <button class="filter-btn" data-filter="commercial">Commercial</button>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <h2>What Directors Say</h2>
+            <div class="testimonials-carousel">
+                <div class="testimonial">
+                    <p>"Sara brings incredible depth and authenticity to every role. Her dedication to the craft is remarkable."</p>
+                    <cite>- John Smith, Award-winning Director</cite>
+                    <img src="/api/placeholder/100/50" alt="Production Company Logo" class="company-logo">
+                </div>
+                <div class="testimonial">
+                    <p>"Working with Sara was a joy. Her range and versatility as an actor is truly impressive."</p>
+                    <cite>- Jane Doe, Theatrical Director</cite>
+                    <img src="/api/placeholder/100/50" alt="Theater Company Logo" class="company-logo">
+                </div>
+            </div>
+        </section>
+
+        <section class="news">
+            <h2>Latest News</h2>
+            <div class="news-grid">
+                <article class="news-item">
+                    <span class="date">November 2024</span>
+                    <h3>Cast in Upcoming Feature Film</h3>
+                    <p>Details coming soon...</p>
+                </article>
+                <article class="news-item">
+                    <span class="date">October 2024</span>
+                    <h3>Theater Award Nomination</h3>
+                    <p>Nominated for Best Supporting Actress</p>
+                </article>
+            </div>
+            <a href="#" class="press-kit-btn">Download Press Kit <i class="fas fa-download"></i></a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-imdb"></i></a>
+            </div>
+            <p>&copy; 2024 Sara Kerz. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Portfolio filter
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.dataset.filter;
+                document.querySelectorAll('.featured-item').forEach(item => {
+                    if (filter === 'all' || item.dataset.category === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+                
+                // Update active filter button
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                button.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
